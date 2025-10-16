@@ -4,13 +4,14 @@ I'm an academic preparing a demo for an economics department on how to use Claud
 In the session, I want to demonstrate how to: 1) use claude.md for project orchestration; 2) Employ sub-agents for specific tasks.
 
 The demo will involve:
-- Retrieving data from the FRED API (python)
-- Scraping public opinion data from YouGov's "State of the U.S. Economy" tracker (python).
-- Using separate sub-agents to:
-    - Fetch FRED data (in parallel)
-	- Collect and process YouGov data.
-	- Validate all data for completeness
-	- Using the downloaded data create plots (ggplot and R)
+
+- Retrieving data from the FRED API (python)  
+- Scraping public opinion data from YouGov's "State of the U.S. Economy" tracker (python).  
+- Using separate sub-agents to:  
+    - Fetch FRED data (in parallel)  
+	- Collect and process YouGov data.  
+	- Validate all data for completeness  
+	- Using the downloaded data create plots (ggplot and R)  
     - Generate a Quarto (QMD) report combining all outputs along with a narrative interpretation
 
 Ask me questions before you start.
@@ -59,13 +60,14 @@ Create a project demonstrating Claude Code's sub-agent architecture for economic
 ## Architecture Overview
 
 ### Main Orchestrator (`main.py`)
-Create a 7-stage pipeline that:
-1. Fetches FRED economic data in parallel (GDP, unemployment, fed funds rate)
-2. Runs opinion scraper sub-agent (optional, non-fatal)
-3. Runs validation sub-agent
-4. Copies validated data to validated/ directory
-5. Runs R visualization sub-agent
-6. Runs statistical analysis sub-agent
+
+Create a 7-stage pipeline that:  
+1. Fetches FRED economic data in parallel (GDP, unemployment, fed funds rate)  
+2. Runs opinion scraper sub-agent (optional, non-fatal)  
+3. Runs validation sub-agent  
+4. Copies validated data to validated/ directory  
+5. Runs R visualization sub-agent  
+6. Runs statistical analysis sub-agent  
 7. Runs report generation sub-agent
 
 Use concurrent.futures for parallel FRED API calls. Aggregate all data to quarterly frequency.
